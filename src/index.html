@@ -178,7 +178,7 @@
                         {car.models.map((model) => (
                             <React.Fragment key={model.id}>
                                 {model.collection
-                                    .map((collect, index) => {
+                                    .map((collect) => {
                                         Object.defineProperty(collect, `id`, {
                                             enumerable: false
                                         })
@@ -189,15 +189,15 @@
                                             {
                                                 index === 0 ?
                                                     <td className="cars-table-column"
-                                                        rowSpan="2">
+                                                        rowSpan={model.collection.length}>
                                                         <div className="model">{model.name}</div>
                                                     </td> : null
                                             }
                                             <td className="cars-table-column">
                                                 <div className="collection">
                                                     <ul>
-                                                        {Object.keys(collection, index)
-                                                            .map((field) => (
+                                                        {Object.keys(collection)
+                                                            .map((field, index) => (
                                                                 <li key={index}>{field}: {collection[field]}</li>
                                                             ))
                                                         }
