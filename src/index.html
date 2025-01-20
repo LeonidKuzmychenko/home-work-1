@@ -14,7 +14,6 @@
         }
 
         .collection {
-            min-width: 100px;
             padding: 20px 40px;
         }
 
@@ -27,14 +26,14 @@
             display: flex;
             padding: 10px;
             justify-content: center;
+            text-align: center;
         }
 
         .cars-table {
-            border: 1px solid black;
             border-collapse: collapse;
         }
 
-        .cars-table-column {
+        .cars-table-column, .cars-table {
             border: 1px solid black;
         }
     </style>
@@ -186,13 +185,11 @@
                                     })
                                     .map((collection, index) => (
                                         <tr key={collection.id}>
-                                            {
-                                                index === 0 ?
-                                                    <td className="cars-table-column"
-                                                        rowSpan={model.collection.length}>
-                                                        <div className="model">{model.name}</div>
-                                                    </td> : null
-                                            }
+                                            {index === 0 && (
+                                                <td className="cars-table-column" rowSpan={model.collection.length}>
+                                                    <div className="model">{model.name}</div>
+                                                </td>
+                                            )}
                                             <td className="cars-table-column">
                                                 <div className="collection">
                                                     <ul>
