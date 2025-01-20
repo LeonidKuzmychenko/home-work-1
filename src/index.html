@@ -196,7 +196,7 @@
                                             <td className="cars-table-column">
                                                 <div className="collection">
                                                     <ul>
-                                                        {Object.keys(collection)
+                                                        {Object.keys(collection, index)
                                                             .map((field) => (
                                                                 <li key={index}>{field}: {collection[field]}</li>
                                                             ))
